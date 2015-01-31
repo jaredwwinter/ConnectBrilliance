@@ -1,6 +1,8 @@
 <link rel="import" href="../components/polymer/polymer.html">
 
-<polymer-element name="pay-braintree" attributes="user payee">
+<script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+
+<polymer-element name="pay-braintree" attributes="user payee value">
     <template>
         <style>
             :host {
@@ -16,6 +18,10 @@
         <div class="card-header" layout horizontal center>
             <h2>{{user}}</h2>
             <p>{{payee}}</p>
+            <form id="checkout" method="post" action="/checkout">
+                <div id="dropin"></div>
+                <input type="submit" value="Pay ${{value}}">
+            </form>
         </div>
     </template>
     <script>
