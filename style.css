@@ -22,7 +22,7 @@ section.preload {
     position: absolute;
 }
 section.preload div {
-    width: 15%;
+    width: 355px;
     margin: auto;
     text-align: center;
 }
@@ -45,4 +45,8 @@ paper-button {
 core-toolbar {
     background-color: #526E9C;
     padding: 0 -5px;
+}
+.fixedbox {
+    display: inline-block;
+    width: 100%;
 }
