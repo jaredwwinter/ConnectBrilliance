@@ -1,49 +1,44 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Connect Brilliance</title>
 
-    <head>
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
 
-        <title>Connect Brilliance</title>
+    <link rel="shortcut icon" sizes="196x196" href="logo.jpg">
+</head>
+<body>
 
-        <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-        <meta name="mobile-web-app-capable" content="yes">
-        
-        <script src="components/webcomponentsjs/webcomponents.js"></script>
+    <style>
+        body {
+            margin: 0;
+        }
+        section.preload {
+            display: block;
+            background-color: black;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+        }
+        section div {
+            width: 15%;
+            margin: auto;
+            text-align: center;
+        }
+    </style>
 
-        <link rel="shortcut icon" sizes="196x196" href="logo.jpg">
-        <link rel="import" href="components/font-roboto/roboto.html">
-
-        <link rel="import" href="pre-loader/pre-loader.html">
-
-        <style>
-            html,body {
-                height: 100%;
-                margin: 0;
-                background-color: #E5E5E5;
-                font-family: 'RobotoDraft', sans-serif;
-            }
-            .container {
-                width: 80%;
-                margin: 50px auto;
-            }
-            @media (min-width: 481px) {
-                .container {
-                    width: 400px;
-                }
-            }
-        </style>
-
-    </head>
-
-    <body unresolved>
-
-        <pre-loader></pre-loader>
-
-        <script>
+    <section class="preload">
+        <div>
+            <img src="https://cdn.tutsplus.com/webdesign/uploads/legacy/tuts/377_loading_gif/preloader.gif">
+        </div>
+    </section>
+    
+    <script>
         setTimeout(function() {
             window.location.href="/login.html";
-        }.bind(this), 3000);
-        </script>
-    </body>
-
+        }.bind(this), 5000);
+    </script>
+</body>
 </html>
