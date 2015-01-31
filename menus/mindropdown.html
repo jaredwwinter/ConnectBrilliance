@@ -1,34 +1,36 @@
 <link rel="import" href="../components/polymer/polymer.html">
-<link rel="import" href="components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../components/paper-dropdown-menu/paper-dropdown-menu.html">
+<link rel="import" href="../components/paper-item/paper-item.html">
+<link rel="import" href="../components/core-menu/core-menu.html">
 <link rel="stylesheet" type="text/css" href="../style.css">
 
 <polymer-element name="min-dropdown">
-	<template>
-	    <style>
-	    
-	    </style>
+    <template>
+        <style>
+        
+        </style>
 
-	    <!-- CONTENTS GO HERE -->
-	                    <paper-dropdown-menu label="Select Duration in Minutes">
-                    <paper-dropdown class="dropdown">
-                        <core-menu class="menu">
-                            <paper-item value="10">10</paper-item>
-                            <paper-item value="15">15</paper-item>
-                            <paper-item value="20">20</paper-item>
-                            <paper-item value="25">25</paper-item>
-                            <paper-item value="30">30</paper-item>
-                            <paper-item value="35">35</paper-item>
-                            <paper-item value="40">40</paper-item>
-                            <paper-item value="45">45</paper-item>
-                            <paper-item value="50">50</paper-item>
-                            <paper-item value="55">55</paper-item>
-                            <paper-item value="60">60</paper-item>
-                        </core-menu>
-                    </paper-dropdown>
-                </paper-dropdown-menu>
-	</template>
+        <!-- CONTENTS GO HERE -->
+        <paper-dropdown-menu label="Select Duration in Minutes">
+            <paper-dropdown class="dropdown">
+                <core-menu class="menu">
+                    <paper-item value="10">10</paper-item>
+                    <paper-item value="15">15</paper-item>
+                    <paper-item value="20">20</paper-item>
+                    <paper-item value="25">25</paper-item>
+                    <paper-item value="30">30</paper-item>
+                    <paper-item value="35">35</paper-item>
+                    <paper-item value="40">40</paper-item>
+                    <paper-item value="45">45</paper-item>
+                    <paper-item value="50">50</paper-item>
+                    <paper-item value="55">55</paper-item>
+                    <paper-item value="60">60</paper-item>
+                </core-menu>
+            </paper-dropdown>
+        </paper-dropdown-menu>
+    </template>
 
-	<script>
+    <script>
         Polymer({
         });
     </script>
