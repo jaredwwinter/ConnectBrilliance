@@ -13,12 +13,6 @@
         <link rel="shortcut icon" sizes="196x196" href="logo.jpg">
         <link rel="import" href="components/font-roboto/roboto.html">
 
-        <link rel="import" href="components/core-header-panel/core-header-panel.html">
-        <link rel="import" href="components/core-toolbar/core-toolbar.html">
-        <link rel="import" href="components/paper-tabs/paper-tabs.html">
-
-        <link rel="import" href="pre-loader/pre-loader.html">
-
         <style>
             html,body {
                 height: 100%;
@@ -39,11 +33,15 @@
 
     </head>
 
-    <body unresolved>
-
-        <pre-loader></pre-loader>
+    <body unresolved id="redirect">
 
         <script>
+            var body = document.getElementById('redirect');
+            body.onclick = redirect;
+            function redirect() {
+                console.log('redirecting...');
+                window.location.href="/preload.html";
+            }
         </script>
     </body>
 

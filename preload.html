@@ -11,6 +11,8 @@
 
         <link rel="import" href="components/font-roboto/roboto.html">
 
+        <link rel="import" href="pre-loader/pre-loader.html">
+
         <style>
             html,body {
                 height: 100%;
@@ -33,9 +35,12 @@
 
     <body unresolved>
 
-        Please enter your details
+        <pre-loader></pre-loader>
 
         <script>
+        setTimeout(function() {
+            window.location.href="/login.html";
+        }.bind(this), 3000);
         </script>
     </body>
 
