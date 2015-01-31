@@ -5,11 +5,19 @@
         <title>Connect Brilliance</title>
 
         <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+
+        <link rel="import" href="components/polymer/polymer.html">
+        <link rel="import" href="components/paper-input/paper-input.html">
+        <link rel="import" href="components/paper-button/paper-button.html">
+        <link rel="import" href="components/paper-checkbox/paper-checkbox.html">
+        <link rel="import" href="menus/mindropdown.html">
+        <link rel="stylesheet" type="text/css" href="style.css">
+
     </head>
-    <body>
+    <body unresolved>
 
         <style>
-            body {
+/*            body {
                 font-family: "Trebuchet MS", Verdana, sans-serif;
                 font-size: 18px;
                 background-color: dimgrey;
@@ -98,7 +106,7 @@
               background-image: -o-linear-gradient(top, #38b448, #8bc63e);
               background-image: linear-gradient(to bottom, #38b448, #8bc63e);
               text-decoration: none;
-            }
+            }*/
         </style>
         
         <div id="main">
@@ -120,6 +128,9 @@
                     <option value="60">60</option>
                 </select>
             </p>
+            
+            <min-dropdown></min-dropdown>
+
             <p>
                 <button id="price" class="btn">Calculate Price</button>
             </p>
@@ -128,8 +139,9 @@
             <br><br>
 
             <button id="continue" class="btn1">Continue</button>
+            <paper-button raised>test</paper-button>
 
-            <footer id="foot01"></footer>
+            <!-- <footer id="foot01"></footer> -->
         </div>
 
         <form id="checkout" action="/checkout.html" hidden>

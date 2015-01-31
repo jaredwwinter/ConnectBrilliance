@@ -1,0 +1,27 @@
+html,body {
+    height: 100%;
+    margin: 0;
+    background-color: #E5E5E5;
+    font-family: 'RobotoDraft', sans-serif;
+}
+.container {
+    width: 80%;
+    margin: 50px auto;
+}
+@media (min-width: 481px) {
+    .container {
+        width: 400px;
+    }
+}
+section.preload {
+    display: block;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+section.preload div {
+    width: 15%;
+    margin: auto;
+    text-align: center;
+}
