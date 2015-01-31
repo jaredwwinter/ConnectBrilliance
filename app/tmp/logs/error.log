@@ -1,0 +1,80 @@
+2015-01-31 09:09:17 Error: Fatal Error (1): Call to a member function allow() on null in [C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\Controller\BattleController.php, line 11]
+2015-01-31 09:09:17 Error: [FatalErrorException] Call to a member function allow() on null
+Request URL: /connect/
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\Users\\Pavel\\...', 11)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\Users\\Pavel\\...', 11, Array)
+#2 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\Users\\Pavel\\...', 11, Array)
+#3 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-31 09:11:58 Error: [MissingViewException] View file "Battle\hello.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Battle\\hello.ctp',
+)
+Request URL: /connect/
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(BattleController), Object(CakeRequest))
+#4 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-01-31 09:15:19 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /connect/css/cake.generic.css
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 09:16:15 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /connect/css/cake.generic.css
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 09:16:19 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /connect/css/cake.generic.css
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 09:16:34 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /connect/css/cake.generic.css
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 09:19:09 Error: [MissingLayoutException] Layout file "Layouts\Hack.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Layouts\\Hack.ctp',
+)
+Request URL: /connect/
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\View\View.php(514): View->_getLayoutFileName('Hack')
+#1 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\View\View.php(481): View->renderLayout('', 'Hack')
+#2 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#3 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#4 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(BattleController), Object(CakeRequest))
+#5 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#6 {main}
+2015-01-31 09:19:09 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /connect/css/cake.generic.css
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
