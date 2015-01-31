@@ -1,4 +1,5 @@
 <link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="service.html">
 
 <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
 
@@ -15,6 +16,9 @@
                 font-weight: 300;
             }
         </style>
+
+        <brain-service></brain-service>
+
         <div class="card-header" layout horizontal center>
             <h2>{{user}}</h2>
             <p>{{payee}}</p>
