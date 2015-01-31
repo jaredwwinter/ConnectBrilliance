@@ -1,22 +1,33 @@
 <link rel="import" href="../components/polymer/polymer.html">
 <link rel="import" href="../components/paper-input/paper-input.html">
+<link rel="import" href="../components/paper-button/paper-button.html">
+<link rel="import" href="../components/paper-checkbox/paper-checkbox.html">
 
 <polymer-element name="user-inputform">
 	<template>
 	    <style>
-	    
+	    	a {
+	    		text-align: right !important;
+	    	}
+	    	paper-checkbox {
+	    		margin-right: 5px;
+	    	}
 	    </style>
 
 	    <!-- CONTENTS GO HERE -->
 	    <h1>Please enter your details</h1>
-    	<paper-input label="FirstName" floatinglabel="First Name"></paper-input></br>
-        <paper-input label="LastName" floatinglabel="Last Name"></paper-input></br>
-        <paper-input label="Email" floatinglabel="E-mail"></paper-input></br>
-        <a href="../content.html">Skip this step</a>
+    	<paper-input label="FirstName" floatinglabel="First Name" required></paper-input></br>
+        <paper-input label="LastName" floatinglabel="Last Name" required></paper-input></br>
+        <paper-input label="Email" floatinglabel="E-mail" required></paper-input></br>
+        <paper-checkbox required></paper-checkbox>I agree to the terms and conditions</br></br>
+        <paper-button raised on-tap="{{redirect}}">Continue</paper-button>
 	</template>
 
 	<script>
         Polymer({
+			redirect: function() {
+				window.location.href = "content.html";
+		    }
         });
     </script>
 </polymer-element>
