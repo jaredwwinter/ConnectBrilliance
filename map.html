@@ -23,6 +23,8 @@
         <script>
             var selection = document.querySelector('custom-googlemap');
             selection.addEventListener('select-charger', function() {
+                // TODO - Do some validation on whether the user has selected a location first
+                window.location.href = '/payment.html';
             });
         </script>
     </body>
