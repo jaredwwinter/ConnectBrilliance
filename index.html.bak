@@ -6,12 +6,12 @@
         <title>Connect Brilliance</title>
 
         <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-
+        <meta name="mobile-web-app-capable" content="yes">
+        
         <script src="components/webcomponentsjs/webcomponents.js"></script>
-
+        
+        <link rel="shortcut icon" sizes="196x196" href="logo.jpg">
         <link rel="import" href="components/font-roboto/roboto.html">
-
-        <link rel="import" href="pre-loader/pre-loader.html">
 
         <style>
             html,body {
@@ -33,14 +33,14 @@
 
     </head>
 
-    <body unresolved>
-
-        <pre-loader></pre-loader>
+    <body unresolved id="redirect">
 
         <script>
-        setTimeout(function() {
-            window.location.href="/login.html";
-        }.bind(this), 3000);
+            var body = document.getElementById('redirect');
+            body.onclick = redirect;
+            function redirect() {
+                window.location.href="/preload.html";
+            }
         </script>
     </body>
 
