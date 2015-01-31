@@ -1,12 +1,13 @@
 html,body {
     height: 100%;
     margin: 0;
+    /*padding: 0 5px;*/
     background-color: #E5E5E5;
     font-family: 'RobotoDraft', sans-serif;
 }
 .container {
     width: 80%;
-    margin: 50px auto;
+    margin: 30px auto;
 }
 @media (min-width: 481px) {
     .container {
@@ -24,4 +25,31 @@ section.preload div {
     width: 15%;
     margin: auto;
     text-align: center;
+}
+google-map {
+    display: block;
+    height: 500px;
+}
+paper-checkbox {
+    margin-right: 5px;
+}
+paper-button {
+    float: right;
+}
+#navheader {
+  background-color: #56BA89;
+}
+.content {
+  padding: 20px;
+}
+core-toolbar {
+background-color: #526E9C;
+padding: 0 -5px;
+/*box-sizing: border-box;
+color: #FFF;
+display: block;
+font-family: "RobotoDraft",sans-serif;
+font-size: 20.8px;
+height: 64px;
+position: relative;*/
 }

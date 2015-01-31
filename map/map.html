@@ -1,18 +1,12 @@
 <link rel="import" href="../components/polymer/polymer.html">
 <link rel="import" href="../components/google-map/google-map.html">
 <link rel="import" href="../components/core-icon-button/core-icon-button.html">
+<link rel="stylesheet" type="text/css" href="style.css">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <polymer-element name="custom-googlemap">
     <template>
-		<style>
-        	google-map {
-	            display: block;
-	            height: 80%;
-			}
-		</style>
-
 		<google-map latitude="-37.8140000" longitude="144.9633200" zoom="15">
 			<google-map-marker title="Cookie" latitude="-37.812018" longitude="144.965214">
 				<img src="cookie.jpg">

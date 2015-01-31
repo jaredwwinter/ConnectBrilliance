@@ -11,12 +11,15 @@
 
         <link rel="import" href="components/font-roboto/roboto.html">
         <link rel="import" href="map/map.html">
+        <link rel="import" href="menus/navtoolbar.html">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
 
     <body unresolved>
-        <custom-googlemap></custom-googlemap>
-
+        <menu-navtoolbar title="Map"></menu-navtoolbar>
+        <div class="container">
+            <custom-googlemap></custom-googlemap>
+        </div>
         <script>
             var selection = document.querySelector('custom-googlemap');
             selection.addEventListener('select-charger', function() {

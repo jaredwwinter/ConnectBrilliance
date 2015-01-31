@@ -10,13 +10,18 @@
         <script src="components/webcomponentsjs/webcomponents.js"></script>
 
         <link rel="import" href="components/font-roboto/roboto.html">
+        <link rel="import" href="menus/navtoolbar.html">
         <link rel="stylesheet" type="text/css" href="style.css">
 
     </head>
 
     <body>
-        <p>Thank you for your purchase. </br> Please present your confirmation code below to the vendor</p></br>
-        <img src="http://barcode.tec-it.com/barcode.ashx?code=QRCode&modulewidth=fit&data=Confirmation code: qwerty12345" alt="Confirmation Barcode"/>
+        <menu-navtoolbar title="Payment"></menu-navtoolbar>
+        <div class="container">
+            <p>Thank you for your purchase. </br> Please present your confirmation code below to the vendor</p></br>
+            <img src="http://barcode.tec-it.com/barcode.ashx?code=QRCode&modulewidth=fit&data=Confirmation code: qwerty12345" alt="Confirmation Barcode"/>
+        </div>
+
         <script>    
         </script>
     </body>

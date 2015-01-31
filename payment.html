@@ -11,6 +11,7 @@
         <link rel="import" href="components/paper-button/paper-button.html">
         <link rel="import" href="components/paper-checkbox/paper-checkbox.html">
         <link rel="import" href="menus/mindropdown.html">
+        <link rel="import" href="menus/navtoolbar.html">
         <link rel="stylesheet" type="text/css" href="style.css">
 
     </head>
@@ -109,6 +110,9 @@
             }*/
         </style>
         
+        <menu-navtoolbar title="Payment"></menu-navtoolbar>
+        <div class="container">
+
         <div id="main">
             <h2>How Long Would You Like To Charge?</h2>
             <h3>Please select a duration in minutes</h3>
@@ -148,6 +152,7 @@
             <div id="dropin"></div>
             <input type="submit" id="submission" value="Pay $0">
         </form>
+        </div>
 
         <script>
             braintree.setup(
