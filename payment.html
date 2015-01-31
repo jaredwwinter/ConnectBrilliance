@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Connect Brilliance</title>
+
+        <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+    </head>
+    <body>
+
+        <style>
+            body {
+                font-family: "Trebuchet MS", Verdana, sans-serif;
+                font-size: 18px;
+                background-color: dimgrey;
+                color: #696969;
+                padding: 3px;
+            }
+            html /deep/ [hidden] {
+                display: none !important;
+            }
+            #main {
+                padding: 5px;
+                padding-left:  15px;
+                padding-right: 15px;
+                background-color: #ffffff;
+                border-radius: 0 0 5px 5px;
+            }
+            h1 {
+                font-family: Georgia, serif;
+                border-bottom: 3px solid #cc9900;
+                color: #996600;
+                font-size: 30px;
+            }
+            table {
+                width:100%;
+            }
+            table, th , td {
+                border: 1px solid grey;
+                border-collapse: collapse;
+                padding: 5px;
+            }
+            th {
+                text-align: left;
+            }
+            table tr:nth-child(odd) {
+                background-color: #f1f1f1;
+            }
+            table tr:nth-child(even) {
+                background-color: #ffffff;
+            } 
+            ul#menu {
+                padding: 0;
+                margin-bottom: 11px;
+            }
+            ul#menu li {
+                display: inline;
+                margin-right: 3px;
+            }
+            ul#menu li a {
+                background-color: #ffffff;
+                padding: 10px 20px;
+                text-decoration: none;
+                color: #696969;
+                border-radius: 4px 4px 0 0;
+            }
+            ul#menu li a:hover {
+                color: white;
+                background-color: black;
+            } 
+            .btn {
+              -webkit-border-radius: 28;
+              -moz-border-radius: 28;
+              border-radius: 28px;
+              font-family: Courier New;
+              color: #ffffff;
+              font-size: 20px;
+              background: #009345;
+              padding: 10px 20px 10px 20px;
+              text-decoration: none;
+            }
+            .btn1 {
+              -webkit-border-radius: 28;
+              -moz-border-radius: 28;
+              border-radius: 28px;
+              font-family: Courier New;
+              color: #ffffff;
+              font-size: 15px;
+              background: #009345;
+              padding: 10px 20px 10px 20px;
+              text-decoration: none;
+            }
+            .btn:hover {
+              background: #38b448;
+              background-image: -webkit-linear-gradient(top, #38b448, #8bc63e);
+              background-image: -moz-linear-gradient(top, #38b448, #8bc63e);
+              background-image: -ms-linear-gradient(top, #38b448, #8bc63e);
+              background-image: -o-linear-gradient(top, #38b448, #8bc63e);
+              background-image: linear-gradient(to bottom, #38b448, #8bc63e);
+              text-decoration: none;
+            }
+        </style>
+        
+        <div id="main">
+            <h2>How Long Would You Like To Charge?</h2>
+            <h3>Please select a duration in minutes</h3>
+            <p>Minutes 
+                <select id="calc">
+                    <option selected="selected">0</option>    
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                    <option value="30">30</option>
+                    <option value="35">35</option>    
+                    <option value="40">40</option>
+                    <option value="45">45</option>
+                    <option value="50">50</option>
+                    <option value="55">55</option>
+                    <option value="60">60</option>
+                </select>
+            </p>
+            <p>
+                <button id="price" class="btn">Calculate Price</button>
+            </p>
+
+            Price: &#36; <span id="output"></span>
+            <br><br>
+
+            <button id="continue" class="btn1">Continue</button>
+
+            <footer id="foot01"></footer>
+        </div>
+
+        <form id="checkout" action="/checkout.html" hidden>
+            <div id="dropin"></div>
+            <input type="submit" id="submission" value="Pay $0">
+        </form>
+
+        <script>
+            var flag = false;
+
+            var price = document.getElementById('price');
+            price.onclick = calcPrice;
+
+            var continueBtn = document.getElementById('continue');
+            continueBtn.onclick = braintree;
+
+            function pricing() {
+                var Price = 0.1;
+                var calc = document.getElementById("calc");
+                var value = document.getElementById("calc").value;
+                var result = value * Price;
+                return result;
+            }
+
+            function calcPrice() {
+                var result = pricing();
+                document.getElementById("output").innerHTML = result;
+                document.getElementById("submission").value = "Pay $" + result;
+                flag = true;
+            }
+
+            function braintree() {
+                if (flag) {
+                    document.getElementById("checkout").removeAttribute('hidden');
+                }
+            }
+
+            braintree.setup(
+                "eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiJlMGY3MTNmNGE3ZWFhMGQ2YzQzNjRkOTNiNzk0MzYzMjNmMjg3YTRkMjMxN2U2Y2VjNjhiNTVmYzRkNjg3NGU0fGNyZWF0ZWRfYXQ9MjAxNS0wMS0zMVQxMTowNjozNy41NjI4NTYzMjIrMDAwMFx1MDAyNm1lcmNoYW50X2lkPWRjcHNweTJicndkanIzcW5cdTAwMjZwdWJsaWNfa2V5PTl3d3J6cWszdnIzdDRuYzgiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvZGNwc3B5MmJyd2RqcjNxbi9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbXSwicGF5bWVudEFwcHMiOltdLCJjbGllbnRBcGlVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvZGNwc3B5MmJyd2RqcjNxbi9jbGllbnRfYXBpIiwiYXNzZXRzVXJsIjoiaHR0cHM6Ly9hc3NldHMuYnJhaW50cmVlZ2F0ZXdheS5jb20iLCJhdXRoVXJsIjoiaHR0cHM6Ly9hdXRoLnZlbm1vLnNhbmRib3guYnJhaW50cmVlZ2F0ZXdheS5jb20iLCJhbmFseXRpY3MiOnsidXJsIjoiaHR0cHM6Ly9jbGllbnQtYW5hbHl0aWNzLnNhbmRib3guYnJhaW50cmVlZ2F0ZXdheS5jb20ifSwidGhyZWVEU2VjdXJlRW5hYmxlZCI6dHJ1ZSwidGhyZWVEU2VjdXJlIjp7Imxvb2t1cFVybCI6Imh0dHBzOi8vYXBpLnNhbmRib3guYnJhaW50cmVlZ2F0ZXdheS5jb206NDQzL21lcmNoYW50cy9kY3BzcHkyYnJ3ZGpyM3FuL3RocmVlX2Rfc2VjdXJlL2xvb2t1cCJ9LCJwYXlwYWxFbmFibGVkIjp0cnVlLCJwYXlwYWwiOnsiZGlzcGxheU5hbWUiOiJBY21lIFdpZGdldHMsIEx0ZC4gKFNhbmRib3gpIiwiY2xpZW50SWQiOm51bGwsInByaXZhY3lVcmwiOiJodHRwOi8vZXhhbXBsZS5jb20vcHAiLCJ1c2VyQWdyZWVtZW50VXJsIjoiaHR0cDovL2V4YW1wbGUuY29tL3RvcyIsImJhc2VVcmwiOiJodHRwczovL2Fzc2V0cy5icmFpbnRyZWVnYXRld2F5LmNvbSIsImFzc2V0c1VybCI6Imh0dHBzOi8vY2hlY2tvdXQucGF5cGFsLmNvbSIsImRpcmVjdEJhc2VVcmwiOm51bGwsImFsbG93SHR0cCI6dHJ1ZSwiZW52aXJvbm1lbnROb05ldHdvcmsiOnRydWUsImVudmlyb25tZW50Ijoib2ZmbGluZSIsInVudmV0dGVkTWVyY2hhbnQiOmZhbHNlLCJtZXJjaGFudEFjY291bnRJZCI6InN0Y2gybmZkZndzenl0dzUiLCJjdXJyZW5jeUlzb0NvZGUiOiJVU0QifSwiY29pbmJhc2VFbmFibGVkIjpmYWxzZSwibWVyY2hhbnRJZCI6ImRjcHNweTJicndkanIzcW4iLCJ2ZW5tbyI6Im9mZmxpbmUiLCJhcHBsZVBheSI6eyJzdGF0dXMiOiJtb2NrIiwiY291bnRyeUNvZGUiOiJVUyIsImN1cnJlbmN5Q29kZSI6IlVTRCIsIm1lcmNoYW50SWRlbnRpZmllciI6Im1lcmNoYW50LmNvbS5icmFpbnRyZWVwYXltZW50cy5kZXYtZGNvcGVsYW5kIiwic3VwcG9ydGVkTmV0d29ya3MiOlsidmlzYSIsIm1hc3RlcmNhcmQiLCJhbWV4Il19fQ==",
+                'dropin', {
+                container: 'dropin'
+            });
+        </script>
+    </body>
+</html>
