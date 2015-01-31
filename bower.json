@@ -13,5 +13,10 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+  "polymer": "Polymer/polymer#master",
+  "core-elements": "Polymer/core-elements#master",
+  "google-map": "PolymerLabs/google-map"
+  }
 }
