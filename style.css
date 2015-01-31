@@ -43,6 +43,6 @@ paper-button {
   padding: 20px;
 }
 core-toolbar {
-background-color: #526E9C;
-padding: 0 -5px;
+    background-color: #526E9C;
+    padding: 0 -5px;
 }
