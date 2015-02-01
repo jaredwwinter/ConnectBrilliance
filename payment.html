@@ -56,7 +56,8 @@
 
         <form id="checkout" action="/checkout.html" hidden>
             <div id="dropin"></div>
-            <input type="submit" id="submission" value="Pay $0">
+            <!-- <input type="submit" id="submission" value="Pay $0"> -->
+            <paper-button id="submission" on-tap="{{submit}}" raised ></paper-button>
         </form>
         </div>
 
@@ -88,7 +89,7 @@
             function calcPrice() {
                 var result = pricing();
                 document.getElementById("output").innerHTML = result;
-                document.getElementById("submission").value = "Pay $" + result;
+                document.getElementById("submission").innerHTML = "Pay $" + result;
                 flag = true;
             }
 
