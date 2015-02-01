@@ -58,6 +58,7 @@
 				<h2 class="name">Gaylord Indian Restaurant</h2>
 				<p>4 Tattersalls Lane, Melbourne VIC 3000</p>
 			</google-map-marker>
+			<google-map-marker id="me" title="My Location" latitude="-37.814554" longitude="144.969561" icon="http://www.google.com/intl/en_us/mapfiles/ms/icons/blue-dot.png"></google-map-marker>
 		</google-map>
 
 		<core-icon-button
@@ -72,5 +73,21 @@
 				this.fire('select-charger');
 		    }
         });
+
+        var x = document.getElementById("me");
+
+		window.onload = function() {
+		    if (navigator.geolocation) {
+		        navigator.geolocation.getCurrentPosition(setPosition);
+		    }
+		}
+
+		function setPosition(position) {
+		    x.setAttribute("latitude", position.coords.latitude); 
+		    x.setAttribute("longitude", position.coords.longitude);
+		    console.log(position.coords.latitude);
+		    console.log(position.coords.longitude);
+		}
+
     </script>
 </polymer-element>
