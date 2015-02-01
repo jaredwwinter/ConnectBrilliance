@@ -55,10 +55,17 @@ core-toolbar {
     width: 100%;
 }
 #searchfab {
-    float: right;
-    margin: 5px;
+    float: right !important;
+    margin-right: 5px;
     margin-top: -60px;
 }
 #continue {
     margin-top: 10px;
+}
+#selectCharger {
+    float: left !important;
+    margin-top: 10px;
+}
+#send {
+    margin-right: 5px;
 }

@@ -1,8 +1,10 @@
 <link rel="import" href="../components/polymer/polymer.html">
 <link rel="import" href="../components/google-map/google-map.html">
 <link rel="import" href="../components/core-icon-button/core-icon-button.html">
+<link rel="import" href="../components/core-icon/core-icon.html">
 <link rel="import" href="../components/paper-checkbox/paper-checkbox.html">
 <link rel="import" href="../components/paper-fab/paper-fab.html">
+<link rel="import" href="../components/paper-button/paper-button.html">
 <link href="path/to/core-icons/core-icons.html" rel="import">
 <link rel="stylesheet" type="text/css" href="../style.css">
 
@@ -64,10 +66,7 @@
 			<google-map-marker id="me" title="My Location" latitude="-37.814554" longitude="144.969561" icon="http://www.google.com/intl/en_us/mapfiles/ms/icons/blue-dot.png"></google-map-marker>
 		</google-map>
 	
-		<core-icon-button
-			icon="send"
-			on-tap="{{selectCharger}}" raised>  Charge here!
-		</core-icon-button>
+		<paper-button id="selectCharger" on-tap="{{selectCharger}}" raised><core-icon id="send" icon="send"></core-icon>Charge here!</core-icon-button>
 
 		<paper-fab icon="search" id="searchfab"></paper-fab>
 
