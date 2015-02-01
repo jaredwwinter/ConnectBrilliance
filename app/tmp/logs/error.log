@@ -78,3 +78,210 @@ Request URL: /connect/css/cake.generic.css
 Stack Trace:
 #0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2015-01-31 09:46:54 Error: [MissingControllerException] Controller class ComponentsController could not be found.
+Exception Attributes: array (
+  'class' => 'ComponentsController',
+  'plugin' => NULL,
+)
+Request URL: /connect/components/webcomponentsjs/webcomponents.js
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 09:46:54 Error: [MissingControllerException] Controller class ComponentsController could not be found.
+Exception Attributes: array (
+  'class' => 'ComponentsController',
+  'plugin' => NULL,
+)
+Request URL: /connect/components/font-roboto/roboto.html
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 09:46:54 Error: [MissingControllerException] Controller class ComponentsController could not be found.
+Exception Attributes: array (
+  'class' => 'ComponentsController',
+  'plugin' => NULL,
+)
+Request URL: /connect/components/core-toolbar/core-toolbar.html
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 09:46:54 Error: [MissingControllerException] Controller class ComponentsController could not be found.
+Exception Attributes: array (
+  'class' => 'ComponentsController',
+  'plugin' => NULL,
+)
+Request URL: /connect/components/core-header-panel/core-header-panel.html
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 09:46:54 Error: [MissingControllerException] Controller class BraintreeController could not be found.
+Exception Attributes: array (
+  'class' => 'BraintreeController',
+  'plugin' => NULL,
+)
+Request URL: /connect/braintree/braintree.html
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 09:46:54 Error: [MissingControllerException] Controller class ComponentsController could not be found.
+Exception Attributes: array (
+  'class' => 'ComponentsController',
+  'plugin' => NULL,
+)
+Request URL: /connect/components/google-map/google-map.html
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 09:46:54 Error: [MissingControllerException] Controller class ComponentsController could not be found.
+Exception Attributes: array (
+  'class' => 'ComponentsController',
+  'plugin' => NULL,
+)
+Request URL: /connect/components/paper-tabs/paper-tabs.html
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 09:52:08 Error: Fatal Error (4): syntax error, unexpected '}' in [C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\Controller\HackController.php, line 18]
+2015-01-31 09:52:08 Error: [FatalErrorException] syntax error, unexpected '}'
+Request URL: /connect/
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\Users\\Pavel\\...', 18)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\Users\\Pavel\\...', 18, Array)
+#2 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\Users\\Pavel\\...', 18, Array)
+#3 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2015-01-31 09:52:09 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /connect/css/cake.generic.css
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 09:54:54 Error: [MissingControllerException] Controller class ComponentsController could not be found.
+Exception Attributes: array (
+  'class' => 'ComponentsController',
+  'plugin' => NULL,
+)
+Request URL: /connect/components/webcomponentsjs/webcomponents.js
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 09:54:55 Error: [MissingControllerException] Controller class ComponentsController could not be found.
+Exception Attributes: array (
+  'class' => 'ComponentsController',
+  'plugin' => NULL,
+)
+Request URL: /connect/components/core-toolbar/core-toolbar.html
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 09:54:55 Error: [MissingControllerException] Controller class ComponentsController could not be found.
+Exception Attributes: array (
+  'class' => 'ComponentsController',
+  'plugin' => NULL,
+)
+Request URL: /connect/components/font-roboto/roboto.html
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 09:54:55 Error: [MissingControllerException] Controller class ComponentsController could not be found.
+Exception Attributes: array (
+  'class' => 'ComponentsController',
+  'plugin' => NULL,
+)
+Request URL: /connect/components/core-header-panel/core-header-panel.html
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 09:54:55 Error: [MissingControllerException] Controller class BraintreeController could not be found.
+Exception Attributes: array (
+  'class' => 'BraintreeController',
+  'plugin' => NULL,
+)
+Request URL: /connect/braintree/braintree.html
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 09:54:55 Error: [MissingControllerException] Controller class ComponentsController could not be found.
+Exception Attributes: array (
+  'class' => 'ComponentsController',
+  'plugin' => NULL,
+)
+Request URL: /connect/components/google-map/google-map.html
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 09:54:55 Error: [MissingControllerException] Controller class ComponentsController could not be found.
+Exception Attributes: array (
+  'class' => 'ComponentsController',
+  'plugin' => NULL,
+)
+Request URL: /connect/components/paper-tabs/paper-tabs.html
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 10:47:41 Error: [MissingActionException] Action HackController::index() could not be found.
+Exception Attributes: array (
+  'controller' => 'HackController',
+  'action' => 'index',
+)
+Request URL: /connect/
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\Routing\Dispatcher.php(193): Controller->invokeAction(Object(CakeRequest))
+#1 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(HackController), Object(CakeRequest))
+#2 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2015-01-31 10:47:41 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /connect/css/cake.generic.css
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 10:48:54 Error: [MissingViewException] View file "Hack\home.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Hack\\home.ctp',
+)
+Request URL: /connect/
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(HackController), Object(CakeRequest))
+#4 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-01-31 10:48:54 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /connect/css/cake.generic.css
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2015-01-31 10:51:57 Error: [MissingViewException] View file "Hack\home.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'Hack\\home.ctp',
+)
+Request URL: /connect/
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\View\View.php(470): View->_getViewFileName(NULL)
+#1 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\Controller\Controller.php(959): View->render(NULL, NULL)
+#2 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\Routing\Dispatcher.php(200): Controller->render()
+#3 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\lib\Cake\Routing\Dispatcher.php(167): Dispatcher->_invoke(Object(HackController), Object(CakeRequest))
+#4 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2015-01-31 10:51:58 Error: [MissingControllerException] Controller class CssController could not be found.
+Exception Attributes: array (
+  'class' => 'CssController',
+  'plugin' => NULL,
+)
+Request URL: /connect/css/cake.generic.css
+Stack Trace:
+#0 C:\Users\Pavel\Documents\GitHub\ConnectBrilliance\app\webroot\index.php(118): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

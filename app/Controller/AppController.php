@@ -34,6 +34,7 @@ class AppController extends Controller {
 
     public function beforeFilter($options = array()) {
         parent::beforeFilter($options);
+        $this->response->header('Access-Control-Allow-Origin', '*');
         $this->layout = 'hack';
     }
 }

@@ -20,7 +20,8 @@
  * @license       http://www.opensource.org/licenses/mit-license.php MIT License
  */
 
-	Router::connect('/', array('controller' => 'hack', 'action' => 'index'));
+    Router::connect('/', array('controller' => 'hack', 'action' => 'home'));
+	Router::connect('/checkout', array('controller' => 'hack', 'action' => 'checkout'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

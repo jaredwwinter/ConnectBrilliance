@@ -1,0 +1,29 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../components/core-ajax/core-ajax.html">
+
+<polymer-element name="brain-service" attributes="token">
+  <template>
+    <style>
+    :host {
+      display: none;
+    }
+    </style>
+    <core-ajax id="ajax"
+      auto
+      url="response.json"
+      on-core-response="{{responseLoaded}}"
+      handleAs="json">
+    </core-ajax>
+  </template>
+  <script>
+  Polymer('brain-service', {
+    created: function() {
+      this.braintree = [];
+    },
+    responseLoaded: function() {
+      this.braintree = this.$.ajax.response.slice(0);
+      console.log(this.braintree);
+    }
+  });
+  </script>
+</polymer-element>

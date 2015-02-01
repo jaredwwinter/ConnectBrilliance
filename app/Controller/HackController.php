@@ -12,6 +12,9 @@ class HackController extends AppController {
         parent::beforeFilter($options);
     }
 
-    public function index() {
+    public function home() {
+    }
+
+    public function checkout() {
     }
 }
