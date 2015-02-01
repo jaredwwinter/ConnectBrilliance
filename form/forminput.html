@@ -8,10 +8,10 @@
 	<template>
 	    <!-- CONTENTS GO HERE -->
 	    <h1>Please enter your details</h1>
-    	<paper-input label="FirstName" floatinglabel="First Name" required></paper-input></br>
-        <paper-input label="LastName" floatinglabel="Last Name" required></paper-input></br>
-        <paper-input label="Email" floatinglabel="E-mail" required></paper-input></br>
-        <paper-checkbox required></paper-checkbox>I agree to the terms and conditions</br></br>
+    	<paper-input label="First Name" floatinglabel="First Name" value="John" required></paper-input></br>
+        <paper-input label="Last Name" floatinglabel="Last Name" value="Doe" required></paper-input></br>
+        <paper-input label="Email" floatinglabel="E-mail" value="JohnDoe@Battlehack.org" required></paper-input></br>
+        <paper-checkbox id="Agreement" checked required></paper-checkbox>I agree to the terms and conditions</br></br>
         <paper-button raised on-tap="{{redirect}}">Continue</paper-button>
 	</template>
 

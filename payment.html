@@ -18,10 +18,11 @@
     </head>
     <body unresolved>
         
-        <menu-navtoolbar title="Payment"></menu-navtoolbar>
+        <menu-navtoolbar pagetitle="Payment"></menu-navtoolbar>
         <div class="container">
 
         <div id="main">
+            <div class="fixedbox">
             <h2>How Long Would You Like To Charge?</h2>
             <h3>Please select a duration in minutes</h3>
             <p>Minutes 
@@ -40,23 +41,24 @@
                     <option value="60">60</option>
                 </select>
             </p>
-            
-            <min-dropdown></min-dropdown>
-
+            </div class="fixedbox">
+            <!-- <min-dropdown></min-dropdown> -->
+            <div class="fixedbox">
             <paper-button raised id="price" class="btn">Calculate Price</paper-button>
-
+            </div>
+            <div class="fixedbox">
             Price: &#36; <span id="output"></span>
-            <br><br>
-
-            <button id="continue" class="btn1">Continue</button>
-            <paper-button raised >Continue</paper-button>
-
+            </div>
+            <div class="fixedbox">
+            <!-- <button id="continue" class="btn1">Continue</button> -->
+            <paper-button id="continue" raised >Continue</paper-button>
+            </div>
         </div>
 
         <form id="checkout" action="/checkout.html" hidden>
             <div id="dropin"></div>
             <input type="text"  style="display:none;" value="0">
-            <input type="submit" id="submission" value="Pay $0">
+            <paper-button id="submission" on-tap="{{submit}}" raised ></paper-button>
         </form>
         </div>
 
@@ -104,7 +106,7 @@
             function calcPrice() {
                 var result = pricing();
                 document.getElementById("output").innerHTML = result;
-                document.getElementById("submission").value = "Pay $" + result;
+                document.getElementById("submission").innerHTML = "Pay $" + result;
                 $(window).data('amount', result);
                 flag = true;
             }

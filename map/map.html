@@ -36,28 +36,29 @@
 			<google-map-marker title="Fitness First QV Platinum" latitude="-37.809880" longitude="144.966669">
 				<img src="fitnessfirst.png">
 				<h2 class="name">Fitness First QV Platinum</h2>
-				<p>Cnr Lonsdale and Russell Street, QV, Melbourne VIC 3000, Australia</p>
+				<p>Cnr Lonsdale and Russell Street, QV, Melbourne VIC 3000</p>
 			</google-map-marker>
 			<google-map-marker title="Grill'd Degraves Street" latitude="-37.817449" longitude="144.965757">
 				<img src="grilld.jpg">
 				<h2 class="name">Grill'd</h2>
-				<p>15 Degraves Street, Melbourne VIC 3000, Australia</p>
+				<p>15 Degraves Street, Melbourne VIC 3000</p>
 			</google-map-marker>
 			<google-map-marker title="Crazy Wing" latitude="-37.812318" longitude="144.967549">
 				<img src="crazywing.jpg">
 				<h2 class="name">Crazy Wing</h2>
-				<p>177 Russell Street, Melbourne VIC 3000, Australia</p>
+				<p>177 Russell Street, Melbourne VIC 3000</p>
 			</google-map-marker>
 			<google-map-marker title="Touché Hombre" latitude="-37.811505" longitude="144.965445">
 				<img src="touchehombre.jpg">
 				<h2 class="name">Touché Hombre</h2>
-				<p>233 Lonsdale Street, Melbourne VIC 3000, Australia</p>
+				<p>233 Lonsdale Street, Melbourne VIC 3000</p>
 			</google-map-marker>
 			<google-map-marker title="Gaylord Indian Restaurant" latitude="-37.812091" longitude="144.965710">
 				<img src="gaylordindian.jpg">
 				<h2 class="name">Gaylord Indian Restaurant</h2>
 				<p>4 Tattersalls Lane, Melbourne VIC 3000</p>
 			</google-map-marker>
+			<google-map-marker id="me" title="My Location" latitude="-37.814554" longitude="144.969561" icon="http://www.google.com/intl/en_us/mapfiles/ms/icons/blue-dot.png"></google-map-marker>
 		</google-map>
 
 		<core-icon-button
@@ -72,5 +73,21 @@
 				this.fire('select-charger');
 		    }
         });
+
+        var x = document.getElementById("me");
+
+		window.onload = function() {
+		    if (navigator.geolocation) {
+		        navigator.geolocation.getCurrentPosition(setPosition);
+		    }
+		}
+
+		function setPosition(position) {
+		    x.setAttribute("latitude", position.coords.latitude); 
+		    x.setAttribute("longitude", position.coords.longitude);
+		    console.log(position.coords.latitude);
+		    console.log(position.coords.longitude);
+		}
+
     </script>
 </polymer-element>
