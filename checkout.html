@@ -19,36 +19,57 @@
 
     <body>
         <menu-navtoolbar pagetitle="Payment"></menu-navtoolbar>
-        <div class="container">
-            <h1>Your transaction has been sent for Processing</h1>
-            <br>
-            <p>Reciept Number/trasactionNumber  NUMBER GENERATED FROM PAYPAL/BRAINTREE WHATEVER </p>
-            <p>Charge time Selected             NEEDS LINK TO CHARGE TIME THAT WAS PREVIOUSLY SELECTED</p> 
-            <p>Total Cost                     NEEDS LINK TO CASH CHARGE QUANTITY PREVIOUSLY OUTPUTTED</p>
+
+        <div class="container" id="processing">
+            <h1>Thanks, we're processing your payment right now!</h1>
+            <p>We're working with Paypal and Braintree and you should see an update right here in a moment.</p>
+        </div>
+
+        <div class="container" id="success" style="display:none;">
+            <h1>Your payment was successful! Woo!</h1>
+            <p>Reciept Number               <span id="receipt"></span></p>
+            <p>Charge time Selected         <span id="charge"></span></p> 
+            <p>Total Cost                   <span id="cost"></span></p>
             <img src="smiley.png" alt="Thank you for your purchase"/>
         </div>
 
         <script>
+            function getUrlParameter(sParam)
+            {
+                var sPageURL = window.location.search.substring(1);
+                var sURLVariables = sPageURL.split('&');
+                for (var i = 0; i < sURLVariables.length; i++) 
+                {
+                    var sParameterName = sURLVariables[i].split('=');
+                    if (sParameterName[0] == sParam) 
+                    {
+                        return sParameterName[1];
+                    }
+                }
+            }
+
+            cookies = document.cookie;
+            var amount = cookies.replace("amount=", "");
+            amount = amount.replace(";", "");
+
             var token = '';
-            // $(function(){
-            //     console.log('ajaxing');
-            //     $.ajax({
-            //         type: "POST",
-            //         url: "http://127.0.0.1:51006/purchase",
-            //         data: {}
-            //     })
-            //     .success(function(msg) {
-            //         token = msg['token'];
-            //         console.log(token);
-            //         braintree.setup(
-            //             token,
-            //             'dropin', {
-            //             container: 'dropin'
-            //         });
-            //     });
-            // });
             $(function() {
-                console.log($(window).data('amount'));
+                $.ajax({
+                    type: "POST",
+                    url: "http://127.0.0.1:51006/purchase",
+                    data: { 
+                        payment_nonce: getUrlParameter('payment_method_nonce'), 
+                        payment_amount: amount
+                    }
+                })
+                .success(function(msg) {
+                    $('#processing').hide();
+                    $('#success').fadeIn();
+
+                    $('#receipt').text(msg['result']['transaction']['id']);
+                    $('#charge').text((amount * 10) + " minutes");
+                    $('#cost').text("$" + msg['result']['transaction']['amount']);
+                });
             });
         </script>
     </body>
