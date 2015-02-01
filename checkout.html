@@ -25,11 +25,17 @@
             <p>We're working with Paypal and Braintree and you should see an update right here in a moment.</p>
         </div>
 
+        <style>
+            #success span{
+                font-weight: 700;
+            }
+        </style>
+
         <div class="container" id="success" style="display:none;">
             <h1>Your payment was successful! Woo!</h1>
-            <p>Reciept Number               <span id="receipt"></span></p>
-            <p>Charge time Selected         <span id="charge"></span></p> 
-            <p>Total Cost                   <span id="cost"></span></p>
+            <p>Reciept Number:               <span id="receipt"></span></p>
+            <p>Charge time Selected:         <span id="charge"></span></p> 
+            <p>Total Cost:                   <span id="cost"></span></p>
             <img src="smiley.png" alt="Thank you for your purchase"/>
         </div>
 
@@ -65,6 +71,10 @@
                 .success(function(msg) {
                     $('#processing').hide();
                     $('#success').fadeIn();
+
+                    console.log(msg);
+                    console.log(msg['result']);
+                    console.log(msg['result']['transaction']);
 
                     $('#receipt').text(msg['result']['transaction']['id']);
                     $('#charge').text((amount * 10) + " minutes");

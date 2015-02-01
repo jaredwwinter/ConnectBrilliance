@@ -48,21 +48,21 @@
             <paper-button raised id="price" class="btn">Calculate Price</paper-button>
             </div>
             <div class="fixedbox">
-            <paper-button id="continue" raised >Continue</paper-button>
+            <paper-button id="continue" id="continue-btn" raised >Continue</paper-button>
             </div>
         </div>
 
         <form id="checkout" action="/checkout.html" hidden>
             <div id="dropin"></div>
             <input type="text"  style="display:none;" value="0">
-            <input type="submit" id="submission" value="Pay $0">
-            <paper-button id="submission" on-tap="{{submit}}" raised ></paper-button>
+            <input type="submit" id="submission" value="Pay $0" style="display:none;">
+            <paper-button id="submission-nice" on-tap="{{submit}}" raised style="display:none;">Make a Payment</paper-button>
         </form>
         </div>
 
         <script>
             var token = '';
-            $(function(){
+            $(function() {
                 $.ajax({
                     type: "POST",
                     url: "http://127.0.0.1:51006/braintree",
@@ -80,7 +80,12 @@
                             'dropin', {
                             container: 'dropin'
                         });
+                        $('#submission-nice').fadeIn();
                     });
+                });
+
+                $('#submission-nice').on('click', function() {
+                    $('#submission').click();
                 });
             });
         </script>
@@ -117,7 +122,6 @@
                     document.getElementById("checkout").removeAttribute('hidden');
                 }
             }
-
         </script>
     </body>
 </html>
