@@ -42,10 +42,26 @@ router.post('/braintree', function(req, res) {
         res.json({ token: clientToken }); 
     });
 });
+router.get('/braintree', function(req, res) {
+    console.log('request received');
+    var gateway = braintree.connect({
+        environment: braintree.Environment.Sandbox,
+        merchantId: "v6pkkfspb62fycn7",
+        publicKey: "b4ggz2gtm4myv8nk",
+        privateKey: "576267fe9238a5d2bdda0da8ede05dd2"
+    });
+    var clientToken = '';
+    gateway.clientToken.generate({}, function (err, response) {
+        clientToken = response.clientToken
+        res.json({ token: clientToken }); 
+    });
+});
 
-app.post("/purchase", function (req, res) {
+router.post("/purchase", function (req, res) {
     var nonce = req.body.payment_method_nonce;
     var amount = req.body.payment_amount;
+
+    //http://localhost:51005/checkout.html?payment_method_nonce=48263bc8-fdf6-4d3b-a170-3ca60dd62fea
     gateway.transaction.sale({
         amount: amount,
         paymentMethodNonce: nonce,

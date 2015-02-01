@@ -5,7 +5,6 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
-        <script src="https://js.braintreegateway.com/v2/braintree.js"></script>
         <script src="components/webcomponentsjs/webcomponents.js"></script>
 
         <link rel="import" href="components/polymer/polymer.html">
@@ -56,6 +55,7 @@
 
         <form id="checkout" action="/checkout.html" hidden>
             <div id="dropin"></div>
+            <input type="text"  style="display:none;" value="0">
             <input type="submit" id="submission" value="Pay $0">
         </form>
         </div>
@@ -71,23 +71,20 @@
                 })
                 .success(function(msg) {
                     token = msg['token'];
-                    console.log(token);
-                    braintree.setup(
-                        token,
-                        'dropin', {
-                        container: 'dropin'
+                    $.ajax({
+                      url: "https://js.braintreegateway.com/v2/braintree.js",
+                      dataType: "script"
+                    }).success(function(msg){
+                        braintree.setup(
+                            token,
+                            'dropin', {
+                            container: 'dropin'
+                        });
                     });
                 });
             });
         </script>
-        <script>
-            braintree.setup(
-                "eyJ2ZXJzaW9uIjoyLCJhdXRob3JpemF0aW9uRmluZ2VycHJpbnQiOiI2ZjRjYmZkNDIxZmFiYjgwN2M2YWY2MGQzNDkwMzQxZmU3MTM3MmIyZmNmYTM3NjQzOTMzM2FiMGZkZmQ0OTE2fGNyZWF0ZWRfYXQ9MjAxNS0wMS0zMVQyMzo0NjoyMC41MDM0MzE5NTYrMDAwMFx1MDAyNm1lcmNoYW50X2lkPXY2cGtrZnNwYjYyZnljbjdcdTAwMjZwdWJsaWNfa2V5PWI0Z2d6Mmd0bTRteXY4bmsiLCJjb25maWdVcmwiOiJodHRwczovL2FwaS5zYW5kYm94LmJyYWludHJlZWdhdGV3YXkuY29tOjQ0My9tZXJjaGFudHMvdjZwa2tmc3BiNjJmeWNuNy9jbGllbnRfYXBpL3YxL2NvbmZpZ3VyYXRpb24iLCJjaGFsbGVuZ2VzIjpbImN2diJdLCJwYXltZW50QXBwcyI6W10sImNsaWVudEFwaVVybCI6Imh0dHBzOi8vYXBpLnNhbmRib3guYnJhaW50cmVlZ2F0ZXdheS5jb206NDQzL21lcmNoYW50cy92NnBra2ZzcGI2MmZ5Y243L2NsaWVudF9hcGkiLCJhc3NldHNVcmwiOiJodHRwczovL2Fzc2V0cy5icmFpbnRyZWVnYXRld2F5LmNvbSIsImF1dGhVcmwiOiJodHRwczovL2F1dGgudmVubW8uc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbSIsImFuYWx5dGljcyI6eyJ1cmwiOiJodHRwczovL2NsaWVudC1hbmFseXRpY3Muc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbSJ9LCJ0aHJlZURTZWN1cmVFbmFibGVkIjp0cnVlLCJ0aHJlZURTZWN1cmUiOnsibG9va3VwVXJsIjoiaHR0cHM6Ly9hcGkuc2FuZGJveC5icmFpbnRyZWVnYXRld2F5LmNvbTo0NDMvbWVyY2hhbnRzL3Y2cGtrZnNwYjYyZnljbjcvdGhyZWVfZF9zZWN1cmUvbG9va3VwIn0sInBheXBhbEVuYWJsZWQiOnRydWUsInBheXBhbCI6eyJkaXNwbGF5TmFtZSI6ImJhdHRsZWhhY2syMDE1ISEhISIsImNsaWVudElkIjpudWxsLCJwcml2YWN5VXJsIjoiaHR0cDovL2V4YW1wbGUuY29tL3BwIiwidXNlckFncmVlbWVudFVybCI6Imh0dHA6Ly9leGFtcGxlLmNvbS90b3MiLCJiYXNlVXJsIjoiaHR0cHM6Ly9hc3NldHMuYnJhaW50cmVlZ2F0ZXdheS5jb20iLCJhc3NldHNVcmwiOiJodHRwczovL2NoZWNrb3V0LnBheXBhbC5jb20iLCJkaXJlY3RCYXNlVXJsIjpudWxsLCJhbGxvd0h0dHAiOnRydWUsImVudmlyb25tZW50Tm9OZXR3b3JrIjp0cnVlLCJlbnZpcm9ubWVudCI6Im9mZmxpbmUiLCJ1bnZldHRlZE1lcmNoYW50IjpmYWxzZSwibWVyY2hhbnRBY2NvdW50SWQiOiJrbjJuZ3B0emR0M2NqcHM4IiwiY3VycmVuY3lJc29Db2RlIjoiVVNEIn0sImNvaW5iYXNlRW5hYmxlZCI6ZmFsc2UsIm1lcmNoYW50SWQiOiJ2NnBra2ZzcGI2MmZ5Y243IiwidmVubW8iOiJvZmYifQ==",
-                'dropin', {
-                container: 'dropin'
-            });
-        </script>
-        <script>
+        <script>    
             var flag = false;
 
             var price = document.getElementById('price');
@@ -108,6 +105,7 @@
                 var result = pricing();
                 document.getElementById("output").innerHTML = result;
                 document.getElementById("submission").value = "Pay $" + result;
+                $(window).data('amount', result);
                 flag = true;
             }
 
